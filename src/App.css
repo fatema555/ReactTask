@@ -1,0 +1,245 @@
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #E13438 !important;
+  color: #444;
+}
+
+/* ========  Logo  ============ */
+.logo_container{
+  display: flex;
+  grid-area: logo;
+  border-bottom: 1px solid whitesmoke;
+  margin: 0;
+  padding: 15px;
+  line-height: 1;
+}
+.logo_img{
+  height: 30px;
+  width: 30px ;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.logo_Name{
+font-weight: 600;
+color: #444;
+font-size: 20px;
+letter-spacing: 1;
+}
+.Logo_span{
+  font-weight: 500;
+  color: #999;
+  font-size: 15px;
+  letter-spacing: 2;
+}
+p{
+  width: 200px;
+  letter-spacing: 1;
+}
+/* ========= Full Page Style with grid system ======= */
+.app{
+  background-color:#fff ;
+  margin: 7vh 7vh 0px 7vh ;
+  height: 93vh;
+  display: grid;
+  grid-template-areas:  "logo nav"
+                        "p-logo p-nav "
+                        "side  main"
+                        "side  p-crousel";
+
+  grid-template-rows: 70px 50px 1fr 40px ;
+  grid-template-columns: 300px 1fr;
+  /* border: 2px solid gray; */
+}
+/* ========= Main Content Style with grid system ======= */
+.main{
+  grid-area: main;
+  border-left: 1px solid whitesmoke;
+  border-top: 1px solid whitesmoke;
+  padding: 3vw 3vw 0 3vw;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: 1fr  1fr 7fr ;
+  grid-template-areas:  "headTitle   .    ."
+                        "search search filter"
+                        "card1 card2 card3";
+  /* grid-column-gap: 1vw; */
+}
+.page_title{
+  grid-area: headTitle;
+  margin-top: -20px;
+}
+.search_container{
+  grid-area: search;
+  width:89%;
+}
+.filter_container{
+  grid-area: filter;
+  width: 90%;
+}
+/* .input-group{
+  width: 100%;
+} */
+.card1{
+  grid-area: card1;
+  width: 18rem;
+  border:1px solid whitesmoke;
+}
+.card2{
+  grid-area: card2;
+  width: 18rem;
+  border:1px solid whitesmoke;
+}
+.card3{
+  grid-area: card3;
+  width: 18rem;
+  border:1px solid whitesmoke;
+}
+.search_search-input{
+  width: 80%;
+  outline: none;
+  border: 1px solid whitesmoke;
+  /* padding: 5px; */
+  font-size: 13px ;
+  color: lightgray;
+}
+.filter_seach-input{
+  outline: none;
+  border: 1px solid whitesmoke;
+  padding: 5px;
+  width: 68%;  
+  font-size: 13px ;
+  color: lightgray;
+}
+/* ========= Crousel Style with flexbox system ======= */
+.crousel{
+  grid-area:  p-crousel;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  border-right: 1px solid whitesmoke;
+  border-top: 1px solid whitesmoke;
+  align-items: center;
+}
+.crousel_item{
+  list-style: none;
+  border-left: 1px solid whitesmoke;
+  flex-grow: 1;
+  text-align: center;
+}
+.crousel_item:last-of-type,
+.crousel_item:first-of-type
+{
+  flex-grow: 2;
+  text-align: center;
+}
+/* ========= Navbar Style with grid system ======= */
+.Navbar{
+  grid-area: nav;
+  border-bottom: 1px solid whitesmoke;
+  border-left: 1px solid whitesmoke;
+}
+.nav_ul{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  height: 100%;
+}
+.nav_li{
+  width: calc(80%/5);
+  border-right: 1px solid whitesmoke;
+  text-align: center;
+  align-self: center;
+  padding: 22px;
+  display: flex;
+  color: #444;
+  font-weight: bold;
+  flex-grow: 1;
+  justify-content: center;
+}
+.nav_li:last-of-type{
+  /* width: 100% -calc(80%/5); */
+  flex-grow: 1;
+  border-right: none;
+  margin: 0;
+  padding: 22px;
+}
+.talkbubble {
+  width: 40px;
+  height: 17px;
+  background: #E13438;
+  position: relative;
+  border-radius: 3px;
+  margin-left: 11px;
+  color: whitesmoke;
+  font-size: 9px;
+  margin-top: 6px;
+}
+.talkbubble:before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 4px;
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-right: 8px solid #E13438;
+  border-bottom: 4px solid transparent;
+}
+
+/* =========Pages Navigation Content Style with grid system ======= */
+
+.Pages_Navi{
+  grid-area: p-nav;
+  border-left: 1px solid whitesmoke;
+}
+
+.Pages_Navi_ul{
+  display: flex;
+  flex-flow: row wrap ;
+  height: 100%;
+}
+
+.Pages_Navi_li{
+  list-style: none;
+  /* width:calc(80%/5);  */
+  border-right: 1px solid whitesmoke ;
+  width: 381px;
+  height: 100%;
+  text-align: center;
+  /* align-self: center; */
+  flex-grow: 1;
+  margin: 0;
+  padding: 10px;
+}
+
+.Pages_Navi_li:last-of-type{
+  /* width: 428px; */
+  border-right: none;
+  /* flex-grow: 1; */
+}
+/* =========SideMenu Content Style with grid system ======= */
+.Side_Menu{
+  grid-area: side;
+  border-top: 1px solid whitesmoke;
+}
+/* ============     Logo   ============== */
+.logo_container
+{
+  grid-area: logo;
+  border-bottom: 1px solid whitesmoke;
+  margin: 0;
+  padding: 22px;
+}
+/* ============   Pages  Logo   ============== */
+.pagesLogo{
+  grid-area: p-logo;
+  margin: 0;
+  padding: 10px 22px;
+}
